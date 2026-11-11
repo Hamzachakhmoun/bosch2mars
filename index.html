@@ -169,7 +169,27 @@ footer.site a{color:#fff}
 .shop-card a{margin-top:0;padding-top:2px}
 @media(max-width:640px){.shop-grid{grid-template-columns:1fr;gap:10px}.shop-card{padding:12px 14px}.shop-card h3{font-size:19px}}
 </style>
-</head>
+<style>
+/* === 2026 pass (per Hamza) === */
+#services .grid{gap:12px}
+#services .card{padding:16px 18px}
+#services .card .icon{width:42px;height:42px;font-size:21px;border-radius:12px}
+#services .card h3{font-size:20px;line-height:1.15;margin:8px 0 5px}
+#services .card p{font-size:14.5px;line-height:1.45;margin:0}
+@media(max-width:640px){#services .grid{grid-template-columns:1fr;gap:10px}#services .card{padding:13px 15px}#services .card h3{font-size:19px}}
+.brand-box{position:relative;overflow:hidden;isolation:isolate}
+.brand-box.lux{background-image:linear-gradient(112deg,rgba(5,28,48,.94) 42%,rgba(5,28,48,.58)),url('/gal-08.webp');background-size:cover;background-position:center}
+.brand-box.every{background-image:linear-gradient(112deg,rgba(8,72,122,.93) 42%,rgba(8,72,122,.55)),url('/gal-11.webp');background-size:cover;background-position:center}
+.brand-box .pill{backdrop-filter:blur(5px);transition:transform .25s ease,background .25s ease}
+.brand-box .pill:hover{transform:translateY(-3px) scale(1.04)}
+.gallery .gitem{border-radius:20px}
+@media(min-width:861px){.gallery .gitem:first-child{grid-column:span 2}}
+@media(max-width:640px){.gallery{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding:4px 2px 14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}.gallery::-webkit-scrollbar{display:none}.gallery .gitem{flex:0 0 84%;scroll-snap-align:center}}
+#lightbox{position:fixed;inset:0;background:rgba(4,18,32,.94);display:none;place-items:center;z-index:200;padding:18px}
+#lightbox.open{display:grid}
+#lightbox img{max-width:100%;max-height:88vh;border-radius:16px}
+#lightbox span{position:absolute;top:14px;right:20px;color:#fff;font-size:34px;font-weight:900;cursor:pointer}
+</style></head>
 <body>
 <div class="topbar"><div class="wrap"><span>Un problème de voiture ? On s'en occupe — devis gratuit et sans engagement.</span><span><a href="tel:+212663591907">0663 59 19 07</a></span></div></div>
 <header class="main"><div class="wrap">
@@ -263,7 +283,7 @@ footer.site a{color:#fff}
 <li><span><b>Travail expliqué avant réparation</b> — vous savez quoi, pourquoi et pour combien.</span></li>
 <li><span><b>Toutes marques sous un même toit</b> — premium et quotidien, pneus, batteries et accessoires sur place.</span></li>
 </ul></div>
-<div class="why-img"><img src="/gal-13.webp" alt="Mercedes Classe C coupé noire devant le garage Bosch Car Service 2 Mars à Casablanca — réparation et entretien Mercedes"/></div>
+<div class="why-img"><img src="/why-zakaria.webp" alt="Zakaria, le patron du garage Bosch Car Service 2 Mars, debout à côté d'un Range Rover noir dans son atelier à Casablanca"/></div>
 </div>
 </div></section>
 
@@ -351,4 +371,6 @@ document.getElementById('rdvForm').addEventListener('submit',function(e){
  document.getElementById('successBox').scrollIntoView({behavior:'smooth',block:'center'});
 });
 </script>
+<div id="lightbox"><span aria-label="Fermer">×</span><img alt="Photo de l'atelier Bosch Car Service 2 Mars en plein écran"/></div>
+<script>document.querySelectorAll('.gallery .gitem img').forEach(function(im){im.style.cursor='zoom-in';im.addEventListener('click',function(){var lb=document.getElementById('lightbox');lb.querySelector('img').src=im.src;lb.classList.add('open')})});document.getElementById('lightbox').addEventListener('click',function(){this.classList.remove('open')});</script>
 </body></html>
